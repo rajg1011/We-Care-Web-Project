@@ -127,7 +127,7 @@ exports.techniqueDataArray = () => {
       data: "Laser Therapy",
     },
     {
-      src: "images/techniquesData/cupping.jpg",
+      src: "images/techniquesData/Cupping.jpg",
       data: "Cupping",
     },
     {
