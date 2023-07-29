@@ -1,0 +1,1004 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainThemeColor: rgb(139, 107, 186);
+  --iconBackground: rgb(248, 247, 243);
+}
+
+/* Header */
+
+header {
+  display: flex;
+}
+
+.brand-image {
+  margin: 0% 1% 0% 2%;
+}
+
+.brand-image img {
+  height: auto;
+  max-width: 20vw;
+  display: block;
+}
+
+.contact-information {
+  flex-grow: 2;
+  text-align: center;
+  margin-left: 10%;
+  padding-top: 2%;
+  color: var(--mainThemeColor);
+}
+
+.contact-information i {
+  float: left;
+  position: relative;
+  left: 3vw;
+  top: 1vh;
+  background-color: var(--iconBackground);
+  color: var(--mainThemeColor);
+  border-radius: 50%;
+  padding: 3%;
+  font-size: 1.8rem;
+}
+
+.contact-data {
+  display: inline-block;
+}
+
+.contact-data p {
+  margin-bottom: -0.2rem;
+}
+
+.contact-data p a {
+  text-decoration: none;
+  color: var(--mainThemeColor);
+  transition: all 0.1s ease 0.5s;
+}
+
+.contact-data p a:hover {
+  color: var(--mainThemeColor);
+}
+
+.bar-icon {
+  display: none;
+}
+
+.button-list {
+  flex-grow: 2;
+  margin: 2% 1% 0% 2%;
+}
+
+button[type="pay-button"] {
+  margin-left: 5%;
+}
+
+.button-list button {
+  background-color: var(--mainThemeColor);
+  border-radius: 56px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  padding: 2% 5%;
+  border: 0;
+  transition: all 0.1s ease-in-out 0.5s;
+}
+
+.button-list button:hover,
+.appointment-channel button:hover {
+  /*common*/
+  background-color: black;
+}
+
+/* Nav */
+
+hr {
+  color: rgb(113, 117, 119);
+  margin: -0.3rem 1rem 0rem 1rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.nav-list {
+  padding-top: 1rem;
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.nav-list > li {
+  font-size: 1.1rem;
+  color: var(--mainThemeColor);
+  font-weight: 500;
+}
+
+.nav-list > li:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.nav-list > li > a {
+  text-decoration: none;
+  color: var(--mainThemeColor);
+}
+
+.drop-down-item {
+  color: rgb(113, 117, 119);
+}
+
+.nav-list > a {
+  border-radius: 50%;
+  background-color: var(--iconBackground);
+  padding: 1%;
+  margin-left: 2rem;
+}
+
+.nav-list > a:last-child {
+  margin-right: 1rem;
+}
+
+.nav-list > a li i {
+  font-size: 1.2rem;
+  color: rgb(78, 82, 85);
+}
+
+.resp-icon-visibility {
+  display: none;
+}
+
+.nav-list > li a:hover {
+  color: rgb(107, 107, 142);
+}
+
+.nav-list > a:hover {
+  box-shadow: -1px 1px 1px 1px rgb(107, 107, 142);
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  min-width: 20vw;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.dropdown-options a {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  margin-top: 0.8rem;
+  padding-bottom: 3px;
+  text-decoration: none;
+  color: var(--mainThemeColor);
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.social-media-dropdown {
+  display: none !important;
+}
+
+.dropdown span {
+  cursor: auto;
+}
+/* Carousel */
+
+#carousel-section {
+  margin-top: 1rem;
+  overflow-x: hidden;
+}
+
+.button-changement {
+  margin-left: -5%;
+  margin-right: -5%;
+}
+
+.button-changement span i {
+  font-size: 1.5rem;
+  color: black;
+}
+
+/* Services*/
+
+#services-section {
+  margin-top: 1rem;
+}
+
+.services {
+  display: flex;
+}
+
+.services-common {
+  flex: 1;
+  padding: 2rem;
+}
+
+.services-common i {
+  font-size: 3rem;
+}
+
+.services-common p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+.services-common a,
+.services-link-black {
+  /*common from cad.css*/
+  text-decoration: none;
+}
+
+.services-common a i,
+.services-link-black i {
+  font-size: 0.8rem;
+  border-radius: 60%;
+  padding: 2px 4px 2px 4px;
+}
+
+.services-common-in-1-3 {
+  /* see and learn this*/
+  background: linear-gradient(
+    var(--mainThemeColor),
+    var(--mainThemeColor) 50%,
+    black 50%,
+    black
+  );
+  background-size: 100% 200%;
+  color: white;
+  transition: all 0.5s;
+}
+
+.services-common-in-1-3:hover {
+  background-position: 100% 100%;
+}
+
+.services-common-in-1-3 a i {
+  background-color: white;
+  color: var(--mainThemeColor);
+}
+
+.services-common-in-1-3 a {
+  color: white;
+}
+
+.nursing-servies a i,
+.services-link-black i {
+  /*common from cad.css*/
+  background-color: black;
+  color: white;
+}
+
+.nursing-servies a,
+.services-link-black {
+  color: black;
+}
+
+/* Trust Section */
+
+#trust,
+#form {
+  /*common*/
+  margin-top: 1rem;
+  display: flex;
+}
+
+.trust-image {
+  background-image: url("../images/handful.jpg");
+  min-width: 40vw;
+  background-repeat: repeat;
+  background-size: cover;
+  height: inherit;
+}
+
+.trust-data {
+  flex-grow: 2;
+  padding-left: 4%;
+  padding-top: 2%;
+}
+
+.trust-data,
+.helping-hand {
+  /*common*/
+  background-color: black;
+  color: white;
+}
+
+.trust-data > p,
+.helping-hand > p {
+  /*common withhelping hand*/
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.trust-data ul,
+.helping-hand > ul {
+  /*common*/
+  margin-top: 3rem;
+  list-style-type: none;
+}
+
+.our-qualities li,
+.helping-hand > ul li {
+  /*common*/
+  margin-top: 2%;
+  margin-right: 3%;
+  font-size: 1.1rem;
+  text-indent: -6%;
+}
+
+.our-qualities li::before,
+.helping-hand ul li::before {
+  /*common*/
+  content: "\f00c";
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-right: 2%;
+  margin-bottom: 5px;
+  padding: 1px 3px;
+  font-size: 0.8rem;
+  color: black;
+  border-radius: 55%;
+  background-color: var(--mainThemeColor);
+}
+
+.data {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.data div {
+  position: relative;
+}
+
+.data-1::before {
+  content: "\f82f";
+}
+
+.data-2::before {
+  content: "\f0fa";
+}
+
+.data-3::before {
+  content: "\f59a";
+}
+
+.data div::before {
+  font-family: FontAwesome;
+  display: inline-block;
+  position: absolute;
+  left: -3.7rem;
+  font-size: 3rem;
+  color: var(--mainThemeColor);
+  margin-right: 1rem;
+}
+
+/* Testimonials */
+#testimonials {
+  margin: 1.5rem;
+}
+
+.testimonials-heading {
+  text-align: center;
+  color: rgb(139, 107, 186);
+  margin-bottom: 1rem;
+}
+
+.testimonials-grid {
+  overflow: hidden;
+  display: grid;
+  padding: 0;
+  margin: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.5rem 0.5rem;
+}
+
+.testimonial-videos {
+  position: relative;
+  overflow: hidden;
+}
+
+iframe {
+  padding: 0.2rem;
+  width: 100%;
+  aspect-ratio: 16 / 8.76;
+}
+
+#responsive-youtube {
+  display: none;
+}
+
+/* form  */
+
+.common-details {
+  padding: 2rem 0.2rem 1rem 0rem;
+}
+
+.helping-hand {
+  padding-left: 3rem;
+  width: 70%;
+}
+
+form > * {
+  display: block;
+}
+
+.approach-solution-heading {
+  margin-top: 1rem;
+}
+
+.helping-hand > h3 {
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+.form-details {
+  background-color: var(--mainThemeColor);
+  width: 30%;
+}
+.form-details h3 {
+  text-align: center;
+  color: white;
+}
+
+.form-details form {
+  margin: 2rem;
+}
+
+.form-details form label {
+  color: white;
+}
+
+.form-details form label span {
+  color: red;
+}
+
+.form-details form label,
+.form-details form select option {
+  font-weight: 500;
+}
+
+.form-details form input,
+.form-details form select {
+  margin-bottom: 2rem;
+  padding: 5px 10px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.form-details form input:focus,
+.form-details form select:focus {
+  outline: none;
+  border: 0;
+}
+
+.form-details form button {
+  font-weight: 500;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.form-details form input[type=number]::-webkit-inner-spin-button,     /* see and learn this*/
+.form-details form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Appointment  */
+
+#book-appointment {
+  margin-top: 1rem;
+  text-align: center;
+  clear: left; /*for rehabiliton therapy.. remove it to understand*/
+}
+
+.appointment-channel h2 {
+  float: left;
+  line-height: 5rem;
+  margin: 0rem 2rem;
+  font-weight: bold;
+}
+
+.appointment-channel button {
+  padding: 1rem 2rem;
+  border-radius: 56px;
+  border: none;
+  font-weight: bold;
+  line-height: 2rem;
+  margin: 0.5rem 0rem 0.5rem 1rem;
+  color: white;
+  background-color: rgb(13, 110, 253);
+  transition: all 0.1s ease-in-out 0.5s;
+}
+
+.appointment-channel button[type="donate-button"] {
+  display: none;
+}
+
+/* footer  */
+
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: rgb(47, 52, 55);
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: white;
+  overflow-y: hidden;
+}
+
+.adress-information a,
+.adress-information p,
+.adress-information i,
+.contact span {
+  font-size: 1.1rem;
+  text-decoration: none;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  color: white;
+  margin-right: 2px;
+}
+
+.contact {
+  background-color: black;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+@media (width<1024px) {
+  /* nav  */
+  .nav-list > a {
+    display: none;
+  }
+
+  .social-media-dropdown {
+    display: inline-block !important;
+  }
+
+  .contact-us {
+    display: none !important;
+  }
+
+  .about {
+    margin-right: 2rem;
+  }
+
+  .nav-list > li:not(:first-child) {
+    margin-left: 1.65rem;
+  }
+}
+
+@media (width<955px) {
+  /* header */
+  header {
+    margin-bottom: 1rem;
+  }
+  .contact-information {
+    margin-left: 3%;
+  }
+
+  /* services  */
+
+  .services-common p {
+    font-size: 1rem;
+  }
+
+  /* Trust Section */
+
+  .data div::before {
+    font-size: 2.5rem;
+    left: 22%;
+    top: -70%;
+  }
+
+  .data {
+    margin-top: 5rem;
+  }
+
+  .hr-trust-data {
+    display: none;
+  }
+
+  /* testimony */
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  /* form  */
+
+  .form-details form button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* appointment */
+  .appointment-channel h2 {
+    float: none;
+    line-height: 3rem;
+  }
+
+  .appointment-channel button {
+    line-height: 1.1rem;
+  }
+}
+
+@media (width<860px) {
+  /* header  */
+  button[type="pay-button"] {
+    display: none;
+  }
+
+  .button-list {
+    text-align: center;
+  }
+
+  button[type="appointment-button"] {
+    padding: 1rem;
+  }
+
+  .contact-information i {
+    left: 1vw;
+  }
+
+  /* Trust Section */
+
+  .trust-image {
+    display: none;
+  }
+
+  /* form  */
+
+  .helping-hand {
+    width: 65%;
+  }
+
+  .form-details {
+    width: 35%;
+  }
+
+  /* appointment buttons  */
+  .appointment-channel button[type="appointment-button"] {
+    display: none;
+  }
+
+  .appointment-channel button[type="donate-button"] {
+    display: inline-block;
+  }
+}
+
+@media (width<740px) {
+  /* header  */
+  .bar-icon {
+    display: inline-block;
+    z-index: 999;
+    margin-bottom: 3%;
+    color: var(--mainThemeColor);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .bar-icon i {
+    font-size: 2rem;
+    position: absolute;
+  }
+
+  .contact-information i {
+    left: 7vw;
+  }
+
+  .xmark-hide {
+    visibility: hidden;
+  }
+
+  .xmark-responsive {
+    visibility: visible;
+  }
+
+  .bar-responsive {
+    visibility: hidden;
+  }
+
+  .button-list button {
+    display: none;
+  }
+
+  /* nav bar toggle class */
+
+  .header-hr-invisible {
+    display: none;
+  }
+
+  .social-media-dropdown {
+    display: none !important;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  .nav-list {
+    padding-top: 0;
+  }
+
+  .about {
+    margin-right: 0rem;
+  }
+
+  .nav-list li {
+    display: block;
+  }
+
+  .nav-list > li:not(:first-child) {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .dropdown-options a {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-options {
+    display: none;
+  }
+
+  .dropdown a i {
+    display: none;
+  }
+
+  .nav-list > a {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list-responsive li {
+    display: none;
+  }
+
+  .nav-list-responsive > a {
+    display: none;
+  }
+
+  /* appointment buttons  */
+
+  .appointment-channel button[type="donate-button"] {
+    display: inline-block;
+  }
+
+  .appointment-channel button[type="appointment-button"] {
+    display: inline-block;
+  }
+
+  @media (width<680px) {
+    /* header  */
+
+    .brand-image img {
+      max-width: 25vw;
+    }
+  }
+
+  @media (width<640px) {
+    /* testimonial-videos */
+
+    #testimonials {
+      display: none;
+    }
+
+    #responsive-youtube {
+      display: grid;
+      position: relative;
+      height: 100%;
+      margin: 2rem 1rem 1rem 1rem;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      height: calc((100% - 30px) / 2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      box-shadow: -2px 2px 1px 0px rgb(107, 107, 142);
+    }
+  }
+
+  @media (width<600px) {
+    /* header  */
+
+    .contact-information i {
+      left: 4vw;
+    }
+    /* services  */
+    .services {
+      text-align: center;
+    }
+
+    .services-common i {
+      font-size: 2rem;
+    }
+
+    .services-common p {
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    .services-common a {
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .services-common a i {
+      font-size: 0.5rem;
+      transform: translateY(-2px);
+    }
+
+    .nursing-servies p span,
+    .expert-physiotherapists p span {
+      display: none;
+    }
+
+    /* trust data  */
+
+    .trust-data ul,
+    .helping-hand > ul {
+      margin-top: 1rem;
+    }
+
+    /* form  */
+    .helping-hand {
+      width: 55%;
+    }
+
+    .form-details {
+      width: 45%;
+    }
+  }
+}
+
+@media (width<530px) {
+  html {
+    font-size: 14px;
+  }
+
+  /* coursel */
+
+  .carousel-item img {
+    min-height: 50vh;
+  }
+}
+
+@media (width<440px) {
+  /* header  */
+  .bar-icon {
+    margin-right: 2rem;
+  }
+
+  .contact-information i {
+    left: 0vw;
+  }
+
+  .brand-image img {
+    max-width: 30vw;
+  }
+
+  .fa-phone-volume {
+    display: none;
+  }
+
+  /* .services */
+
+  .expert-physiotherapists,
+  .nursing-servies {
+    display: none;
+  }
+
+  .covid-services {
+    margin: 0 4rem 0 4rem;
+    border-radius: 10px;
+  }
+
+  .our-qualities li {
+    text-indent: -8%;
+  }
+
+  /* form  */
+
+  .helping-hand,
+  .form-details {
+    width: auto;
+  }
+
+  #form {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-details {
+    margin: 0rem 1.5rem;
+    border-radius: 10px;
+  }
+
+  .form-details h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  /* appointment */
+
+  .appointment-channel h2 {
+    margin: 0rem 0.5rem;
+  }
+}
+
+@media (width<=360px) {
+  /* header  */
+  .contact-information {
+    display: none;
+  }
+
+  .brand-image img {
+    max-width: 40vw;
+  }
+
+  .bar-icon {
+    margin-left: 4rem;
+  }
+
+  /* trust  */
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .data div::before {
+    left: 42%;
+    margin-right: 0;
+  }
+}
+
+@media (width<320px) {
+  .carousel-item img {
+    height: 60vh;
+  }
+}

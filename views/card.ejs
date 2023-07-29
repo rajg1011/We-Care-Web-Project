@@ -1,0 +1,29 @@
+<%- include("header.ejs") -%>
+<link rel="stylesheet" href="css/cards.css" />
+
+<section id="card-section">
+  <% dataGet.forEach((data)=>{ %>
+  <div
+    class="card card-changement"
+    data-aos="slide-up"
+    data-aos-duration="500"
+    style="width: 20rem"
+    onclick="window.location.href='/<%=data.data.toLowerCase()%>'"
+  >
+    <img
+      src="<%= data.src %>"
+      loading="lazy"
+      class="card-img-top"
+      alt="<%= data.data %>"
+    />
+    <div class="card-body">
+      <h5 class="card-title"><%= data.data %></h5>
+      <span class="services-link-black"
+        ><i class="fa-solid fa-angle-right"></i> Read More</span
+      >
+    </div>
+  </div>
+  <% }) %>
+</section>
+
+<%- include("apointment.ejs") -%> <%- include("footer.ejs") -%>

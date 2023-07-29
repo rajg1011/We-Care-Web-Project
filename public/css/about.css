@@ -1,0 +1,237 @@
+/* CSS file for about.ejs  */
+:root{
+  --backgroundColor: rgb(246, 246, 246);
+  --themeColor: rgb(217, 45, 104);
+}
+
+#about,
+#basic-physiotherapy,
+#advance-physiotherapy {
+  /*common*/
+  display: flex;
+  justify-content: space-around;
+}
+
+#about,
+#advance-physiotherapy {
+  /*common*/
+  background-color: var(--backgroundColor);
+}
+
+.about-common,
+.basic-physiotherapy-common,
+.advance-physiotherapy-common {
+  /*common*/
+  margin: 4rem;
+}
+
+.about-picture img,
+.basic-physiotherapy-picture img,
+.advance-physiotherapy-picture img {
+  /*common*/
+  max-width: 40vw;
+  max-height: 80vh;
+}
+
+.basic-physiotherapy-details ul,
+.advance-physiotherapy-details ul {
+  /*common*/
+  list-style: none;
+}
+
+.basic-physiotherapy-details ul li,
+.advance-physiotherapy-details ul li {
+  /*common*/
+  line-height: 2rem;
+}
+
+.basic-physiotherapy-details ul li::before,
+.advance-physiotherapy-details ul li::before {
+  /*common*/
+  content: "\f14a";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 1.5rem;
+  color: var(--themeColor);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.advance-physiotherapy-other-details {
+  background-color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-left: 5px solid var(--themeColor);
+  margin-left: 1rem;
+}
+
+.advance-physiotherapy-details h5 {
+  margin-top: 1.5rem;
+}
+
+.advance-physiotherapy-details h5 ~ ul {
+  display: inline-block;
+}
+
+.advance-physiotherapy-details h5 ~ ul:not(:first-child) {
+  margin-left: 2rem;
+}
+
+#frequently-asked-section {
+  background-image: url("../images/about/faq-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.faq-answers {
+  width: 70%;
+  margin-left: 3rem;
+  padding-top: 3rem;
+  position: sticky;
+  padding-bottom: 1rem;
+}
+
+.faq-answers p:nth-child(2n) {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+}
+
+.faq-answers h2,
+.faq-answers p > span {
+  color: var(--themeColor);
+}
+
+.faq-answers p > span {
+  font-size: 1.1rem;
+}
+
+#people-testimony {
+  position: relative;
+  font-size: 1rem;
+  height: 100%;
+  width: 100vw;
+  background-image: url("../images/about/testimonial-bg.jpg");
+  background-attachment: fixed;
+  margin: 0;
+  padding: 7rem;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: left;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 5px 0px rgb(147, 188, 226);
+}
+
+.testimony {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1.5rem;
+}
+
+.slider-data i {
+  font-size: 2.8rem;
+  color: rgb(147, 188, 226);
+  padding-bottom: 1rem;
+}
+
+.slider-name {
+  margin-top: 1rem;
+}
+
+.slider-name span {
+  margin-left: 2rem;
+  font-size: 1.1rem;
+}
+
+.slider-name img {
+  min-width: 5%;
+  max-width: 15%;
+}
+
+@media (width<1000px) {
+  .basic-physiotherapy-picture img {
+    transform: translateY(40%);
+  }
+  .advance-physiotherapy-details h5 ~ ul {
+    display: block;
+  }
+
+  .advance-physiotherapy-picture img {
+    transform: translateY(50%);
+  }
+
+  .slider-name img {
+    min-width: 10%;
+    max-width: 25%;
+  }
+}
+
+@media (width<950px) {
+  .about-common,
+  .basic-physiotherapy-common,
+  .advance-physiotherapy-common {
+    /*common*/
+    margin: 2rem;
+  }
+  .faq-answers {
+    width: 90%;
+    overflow-x: hidden;
+  }
+}
+
+@media (width<=790px) {
+  #about,
+  #basic-physiotherapy,
+  #advance-physiotherapy {
+    text-align: center;
+  }
+  .about-picture,
+  .basic-physiotherapy-picture,
+  .advance-physiotherapy-picture {
+    /*common*/
+    display: none;
+  }
+
+  .basic-physiotherapy-details ul,
+  .advance-physiotherapy-details h5 ~ ul {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+@media (width<=660px) {
+  #people-testimony {
+    padding: 5rem 3%;
+  }
+}
+
+@media (width<535px) {
+  .advance-physiotherapy-details h5 ~ ul:not(:first-child) {
+    margin-left: 0rem;
+  }
+  .faq-answers {
+    margin-left: 6%;
+    padding-right: 2%;
+  }
+
+  #people-testimony {
+    font-size: 0.9rem;
+  }
+}
+
+@media (width<485px) {
+  #frequently-asked-section {
+    background: none;
+    background-color: rgb(237, 222, 217);
+  }
+}

@@ -1,0 +1,8 @@
+1)- How to import data from one js file to another. Like city data in another file and function of it in form is in another file.
+2)- How to read data of js file in node js file.
+3)- How to import data of simple js file to server file
+4)- Why animation of span is already run while of h2, it run when user see it.
+5)- How to set a transition in hamburger navbar.
+6)- Make slider stop when youtube video is playing.
+7)- How to make list in nurse to not go inide image flow.
+8)- Make card in about.ejs of same height always.

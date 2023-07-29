@@ -1,0 +1,156 @@
+/* CSS file for all ejs files in ailments, ourServices, techniques folder of partials*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul li,
+p {
+  font-size: 1.1rem;
+  overflow-wrap: break-word;
+}
+
+h5 {
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  overflow-wrap: break-word;
+}
+
+#general-information {
+  margin: 0rem 4rem;
+}
+
+.main-information {
+  margin-top: 1rem;
+}
+
+.main-information h1 {
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.main-information img {
+  display: block;
+  min-width: 70vw;
+  max-width: 80vw;
+  min-height: 50vh;
+  max-height: 70vh;
+  margin-top: 1rem;
+  margin: auto;
+  box-shadow: 3px 3px 5px 0px rgb(107, 107, 142);
+}
+
+.main-information p {
+  margin-top: 1rem;
+}
+
+.information-with-points-1,
+.information-with-point-2 {
+  margin-top: 1rem;
+}
+
+.information-1-image,
+.information-2-image {
+  padding: 1rem;
+}
+
+.information-1-image img {
+  float: right;
+  z-index: 999;
+  position: relative;
+  margin-left: 3rem;
+}
+
+.information-2-image img {
+  float: left;
+  z-index: 999;
+  position: relative;
+  margin-right: 3rem;
+}
+
+.information-1-image img,
+.information-2-image img {
+  min-width: 20vw;
+  max-width: 45vw;
+  height: 100%;
+  margin-bottom: 0.8rem;
+  margin-top: 1rem;
+  box-shadow: 3px 3px 5px 0px rgb(107, 107, 142);
+}
+
+#faqs {
+  margin: 4rem;
+  clear: left;
+}
+
+#faqs h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: rgb(139, 107, 186);
+  background: none;
+}
+
+.accordion-body {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+@media (width<700px) {
+  #general-information {
+    margin: 0rem 2rem;
+  }
+  .information-with-points-1,
+  .information-with-point-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .information-1-image,
+  .information-2-image {
+    margin: auto;
+  }
+
+  .information-1-image img {
+    margin-left: 0rem;
+  }
+
+  .information-2-image img {
+    margin-right: 0rem;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .main-information img {
+    width: 100%;
+  }
+
+  #faqs {
+    margin: 2rem;
+  }
+}
+
+@media (width<530px) {
+  .information-1-image img,
+  .information-2-image img {
+    min-width: 65vw;
+  }
+
+  .main-information img {
+    min-height: 35vh;
+  }
+}

@@ -1,0 +1,79 @@
+<%- include("header") -%>
+<link rel="stylesheet" href="css/covid.css" />
+<section id="form" class="form-responsive">
+  <div class="helping-hand common-details details">
+    <h2>We'll be happy to hear from you. Get in touch with us.</h2>
+    <p>
+      <i class="fa-solid fa-phone"></i
+      ><span><a href="tel:88 60 90 1999">88 60 90 1999</a></span>
+    </p>
+    <p>
+      <i class="fa-solid fa-envelope"></i
+      ><span
+        ><a href="mailto:office@wetakecare.in">office@wetakecare.in</a></span
+      >
+    </p>
+    <p><i class="fa-solid fa-location-arrow"></i><span>Noida, India</span></p>
+    <p>
+      <i class="fa-solid fa-clock"></i
+      ><span>Mon to Sat (9:00 AM - 7:00 PM)</span>
+    </p>
+  </div>
+  <div class="form-details common-details form-responsive-details">
+    <h3>Fill the form below and we will contact you.</h3>
+    <h3>We will contact you</h3>
+    <form
+      method="post"
+      id="form-2"
+      name="form-2"
+      onsubmit="return formValidation()"
+    >
+      <label for="name">Name <span>*</span></label>
+      <input type="text" id="name" name="name" required spellcheck="false" />
+      <label for="phone">Mobile Number <span>*</span></label>
+      <input type="number" name="phone" required id="phone" />
+      <label for="location">Location <span>*</span></label>
+      <select name="location" id="location" required>
+        <option value="Select">Select</option>
+        <option value="east-delhi">East Delhi</option>
+        <option value="west-delhi">West Delhi</option>
+        <option value="north-delhi">North Delhi</option>
+        <option value="south-delhi">South Delhi</option>
+        <option value="central-delhi">Central Delhi</option>
+        <option value="noida">Noida</option>
+        <option value="greater-noida">Greater Noida</option>
+        <option value="gurugram">Gurugram</option>
+        <option value="faridabad">Faridabad</option>
+        <option value="ghaziabad">Ghaziabad</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <label for="mesage">Message</label>
+      <input type="text" name="message" spellcheck="false" id="email" />
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+  </div>
+</section>
+<script>
+  function formValidation() {
+    if (document.forms["form-2"]["name"].value.length < 3) {
+      alert("Name must be >=3");
+      return false;
+    } else if (/^\d+$/.test(document.forms["form-2"]["name"].value)) {
+      alert("Name can not be a Number");
+      return false;
+    } else if (
+      document.forms["form-2"]["phone"].value.length < 10 ||
+      document.forms["form-2"]["phone"].value.length > 10
+    ) {
+      alert("kindly give us a correct Phone Number");
+      return false;
+    } else if (document.forms["form-2"]["location"].value === "Select") {
+      alert("Kindly choose correct location");
+      return false;
+    }
+  }
+</script>
+
+<%- include("apointment") -%> <%- include("footer") -%>

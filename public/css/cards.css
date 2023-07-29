@@ -1,0 +1,25 @@
+/* CSS file for card.ejs */
+#card-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0rem 2rem 0rem;
+  flex-wrap: wrap;
+  flex-grow: 10;
+  gap: 2rem;
+  margin: 2rem 1rem;
+}
+
+.card-changement {
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.card-changement img {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.card-changement img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(4px 4px 5px gray);
+}

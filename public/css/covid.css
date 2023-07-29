@@ -1,0 +1,74 @@
+/* CSS file for covid.ejs */
+/* Most css of this is from style.css */
+#form {
+  margin: 3rem;
+}
+
+.details {
+  text-align: center;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  padding-right: 2rem;
+}
+
+.form-details h3 {
+  padding: 0rem 1rem;
+}
+
+.details h2 {
+  margin-bottom: 1.5rem;
+}
+
+.details span {
+  margin-left: 5px;
+}
+
+.form-responsive-details > h3:not(:first-child) {
+  display: none;
+}
+
+.details a {
+  text-decoration: none;
+  color: white;
+}
+
+.details a:hover {
+  color: rgb(139, 107, 186);
+}
+
+/* All media query of this willl overwrite style.css media query */
+@media (width<800px) {
+  .form-responsive {
+    display: flex;
+    flex-direction: column-reverse !important; /*to overcme query of style.css*/
+  }
+
+  .common-details {
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 20px;
+  }
+}
+
+@media (width<500px) {
+  .common-details {
+    width: 100%;
+  }
+}
+
+@media (width<435px) {
+  .form-responsive-details > h3:first-child {
+    display: none;
+  }
+
+  .form-responsive-details > h3:not(:first-child) {
+    display: block;
+  }
+}
+
+@media (width<340px) {
+  .details {
+    display: none;
+  }
+}

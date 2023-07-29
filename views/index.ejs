@@ -1,0 +1,255 @@
+<%- include("header.ejs") -%>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+<section id="carousel-section">
+  <div
+    id="carouselExampleAutoplaying"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img
+          src="images/banner1.jpeg"
+          class="d-block w-100"
+          alt="Basic and Advance Physiotheraphy"
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img
+          src="images/banner2.jpeg"
+          class="d-block w-100"
+          alt="Dry Cupping and Kinesio Taping"
+        />
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img
+          src="images/banner3.jpeg"
+          class="d-block w-100"
+          alt="We Care Hospitality"
+        />
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev button-changement"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev"
+    >
+      <span aria-hidden="true"><i class="fa-solid fa-angle-left"></i></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next button-changement"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next"
+    >
+      <span aria-hidden="true"><i class="fa-solid fa-angle-right"></i></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section id="services-section">
+  <div class="services">
+    <div class="expert-physiotherapists services-common services-common-in-1-3">
+      <i class="fa-solid fa-user-doctor"></i>
+      <p><span>Expert</span> Physiotherapists</p>
+      <a href="/advance physiotherapy" class="services-link"
+        ><i class="fa-solid fa-angle-right"></i> Read More</a
+      >
+    </div>
+    <div class="nursing-servies services-common">
+      <i class="fa-solid fa-house-medical-circle-check"></i>
+      <p>Nursing <span> and Attendant </span>Services</p>
+      <a href="/nurse" class="services-link"
+        ><i class="fa-solid fa-angle-right"></i> Read More</a
+      >
+    </div>
+    <div class="covid-services services-common services-common-in-1-3">
+      <i class="fa-solid fa-virus-covid-slash"></i>
+      <p>Covid-19 Services</p>
+      <a href="/covid" class="services-link"
+        ><i class="fa-solid fa-angle-right"></i> Read More</a
+      >
+    </div>
+  </div>
+</section>
+<section id="trust">
+  <div class="trust-image">
+    <!-- Background image -->
+  </div>
+  <div class="trust-data">
+    <p>SOLUTIONS TO YOUR PAIN</p>
+    <h2><b>We Proudly Give Quality Treatments</b></h2>
+    <ul class="our-qualities">
+      <li>Professional and Certified Physiotherapists</li>
+      <li>Qualified and Experienced Nursing and GDA / Attendant Staff</li>
+      <li>Doctor's Consultation and many other services under One Roof</li>
+    </ul>
+    <hr class="mt-5 me-5 border-2 border-danger hr-trust-data" />
+    <div class="data">
+      <div class="data-1 data-common">
+        <h2 data-number="276">0<span>+</span></h2>
+        <p>Skilled Staff</p>
+      </div>
+      <div class="data-2 data-common">
+        <h2 data-number="51245">0<span>+</span></h2>
+        <p>Solved Cases</p>
+      </div>
+      <div class="data-3 data-common">
+        <h2 data-number="50157">0<span>+</span></h2>
+        <p>Happy Patient</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="testimonials">
+  <div class="testimonials-heading">
+    <h2>What our Clients have to say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <% for( var i=1 ; i<= linkArray.length; i++){ %>
+    <div class="testimonial<%=i %> testimonial-videos">
+      <iframe
+        loading="lazy"
+        ;
+        srcdoc="
+      <style>
+        *{
+          margin:0;
+          padding:0;
+          overflow:hidden;
+        }
+
+        img[alt='We Care Youtube Video'] {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        img[src='images/video-player.svg'] {
+          filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+          transition: all 250ms ease-in-out;
+          height:30%;
+          width: 30%;
+          position: absolute;
+          top:40%;
+          left:35%
+        }
+        body:hover img[src='images/video-player.svg'] {
+          filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+          transform: scale(1.2);
+        }
+      </style> 
+      <a href='https://www.youtube.com/embed/<%=linkArray[i-1]%>?autoplay=1'>
+        <img src='https://img.youtube.com/vi/<%=linkArray[i-1]%>/hqdefault.jpg' alt='We Care Youtube Video' loading='lazy'>
+        <img src='images/video-player.svg'>
+      </a>
+      "
+        src="https://www.youtube.com/embed/<%=linkArray[i-1]%>"
+        autoplay="1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<section id="responsive-youtube">
+  <div class="testimonials-heading">
+    <h2>What our Clients have to say</h2>
+  </div>
+  <div class="swiper mySwiper-youtube">
+    <div class="swiper-wrapper">
+      <% for( var i=1 ; i<= linkArray.length; i++){ %>
+      <div class="swiper-slide">
+        <iframe
+          id="iframe<%=i%>"
+          loading="lazy"
+          ;
+          srcdoc="
+          <style>
+            *{
+              margin:0;
+              padding:0;
+              overflow:hidden;
+            }
+    
+            img[alt='We Care Youtube Video'] {
+              position: absolute;
+              width: 100%;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+            }
+            img[src='images/video-player.svg'] {
+              filter: drop-shadow(1px 1px 10px hsl(206.5, 70.7%, 8%));
+              transition: all 250ms ease-in-out;
+              height:30%;
+              width: 30%;
+              position: absolute;
+              top:40%;
+              left:35%
+            }
+            body:hover img[src='images/video-player.svg'] {
+              filter: drop-shadow(1px 1px 10px hsl(206.5, 0%, 10%));
+              transform: scale(1.2);
+            }
+          </style> 
+          <a href='https://www.youtube.com/embed/<%=linkArray[i-1]%>?enablejsapi=1'>
+            <img src='https://img.youtube.com/vi/<%=linkArray[i-1]%>/hqdefault.jpg' alt='We Care Youtube Video' loading='lazy'>
+            <img src='images/video-player.svg'>
+          </a>
+          "
+          src="https://www.youtube.com/embed/<%=linkArray[i-1]%>?enablejsapi=1"
+          autoplay="1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
+<section id="form">
+  <div class="helping-hand common-details">
+    <p>WE&apos;RE HERE TO HELP YOU</p>
+    <h2><b>Start Up Your Health Care With Us</b></h2>
+    <h2 class="approach-solution-heading">Our Approach</h2>
+    <ul>
+      <li>Root Cause Search</li>
+      <li>Treatment</li>
+      <li>Stabilization</li>
+    </ul>
+    <hr class="mt-5 me-5 border-2 border-danger" />
+    <h2 class="approach-solution-heading">Solutions</h2>
+    <ul>
+      <li>Findings & Testing</li>
+      <li>Define forms of therapy</li>
+      <li>MTT, Independent exercises / Movements</li>
+    </ul>
+    <hr class="mt-5 me-5 border-2 border-danger" />
+    <span><i class="fa-solid fa-users-medical"></i></span>
+    <h3>
+      <b
+        >We Take Care is trusted by more then
+        <span data-number="50157">0<span>+</span></span> healthy patients</b
+      >
+    </h3>
+  </div>
+  <div class="form-details common-details">
+    <h3>Fill the Form</h3>
+    <%- include("form.ejs") -%>
+  </div>
+</section>
+<%- include("apointment.ejs") -%> <%- include("footer.ejs") -%>
