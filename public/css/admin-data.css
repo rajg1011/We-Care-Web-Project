@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainThemeColor: rgb(139, 107, 186);
+  --formHeading: rgb(177, 129, 250);
+}
+
+#admin-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+#admin-page > h1 {
+  color: var(--mainThemeColor);
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+}
+
+#admin-page > h2 {
+  color: var(--formHeading);
+  margin-top: 2rem;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+.admin-table {
+  margin-top: 1rem;
+}
+
+.admin-table,
+.admin-table th,
+.admin-table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+}
+
+.admin-table tr td a {
+  text-decoration: none;
+}
+
+#covid-form {
+  margin-bottom: 2rem;
+}
+
+.admin-table td form input {
+  display: none;
+}

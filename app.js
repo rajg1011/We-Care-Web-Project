@@ -11,12 +11,22 @@ const essentialsData = require(__dirname + "/data.js").essentialsDataArray();
 const specialisedData = require(__dirname + "/data.js").specialisedDataArray();
 const ailmentsData = require(__dirname + "/data.js").ailmentsDataArray();
 const techniqueData = require(__dirname + "/data.js").techniqueDataArray();
+var passport = require("passport");
+var LocalStrategy = require("passport-local");
+var session = require("express-session");
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-
+app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    name: "admin-we-care",
+    secret: `${process.env.SECRET}`,
+    saveUninitialized: false,
+    resave: false,
+  })
+);
 mongoose
   .connect(
     `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.iufm9po.mongodb.net/we-care`
@@ -28,7 +38,7 @@ mongoose
     console.log(err);
   });
 
-// Mongoose Schema
+// Mongoose Schema for all user
 
 const formSchemaforAppointemt = new mongoose.Schema({
   name: String,
@@ -53,6 +63,69 @@ const formSchemaforCovid = new mongoose.Schema({
 });
 
 const formCovidItems = mongoose.model("Form-Covid-Items", formSchemaforCovid);
+
+// for admin authentication
+const adminSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+});
+
+const adminItem = mongoose.model("admin-data", adminSchema);
+
+passport.use(
+  new LocalStrategy(
+    {
+      usernameField: "email",
+    },
+    async function (email, password, done) {
+      try {
+        const user = await adminItem.findOne({ email: email });
+        if (!user || user.password !== password) {
+          console.log("Invalid user name");
+          return done(null, false);
+        }
+        return done(null, user);
+      } catch (err) {
+        console.log("Raj");
+        return done(err);
+      }
+    }
+  )
+);
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async function (id, done) {
+  try {
+    const user = await adminItem.findById(id); //ID
+    if (!user) {
+      return done(null, false);
+    }
+    return done(null, user);
+  } catch (err) {
+    return done(err);
+  }
+});
+
+passport.checkAuthentication = function (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    return res.redirect("/admin");
+  }
+};
+
+passport.setAuthenticatedUser = function (req, res, next) {
+  if (req.isAuthenticated()) {
+    res.locals.user = req.user;
+  }
+  next();
+};
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 
 // Home page and form
 
@@ -231,11 +304,88 @@ app.post("/covid", async (req, res) => {
         res.redirect("/");
       })
       .catch((err) => {
-        res.redirect("/formError");
+        res.redirect("/formError", { error: "" });
       });
   } catch (err) {
     console.log(err.message);
   }
+});
+
+// Admin Column
+
+app.get("/admin", async (req, res) => {
+  res.render("admin");
+});
+
+app.get("/admin-data", async (req, res) => {
+  if (req.isAuthenticated()) {
+    var generalFormArray = null;
+    await formAppointmentItems
+      .find({})
+      .then((data) => {
+        generalFormArray = JSON.parse(JSON.stringify(data));
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+    var covidFromArray = null;
+    await formCovidItems
+      .find({})
+      .then((data) => {
+        covidFromArray = JSON.parse(JSON.stringify(data));
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    res.render("admin-data", {
+      generalFormArray: generalFormArray,
+      covidFromArray: covidFromArray,
+    });
+  } else {
+    res.redirect("/admin");
+  }
+});
+
+app.post("/admin", (req, res) => {
+  const adminData = new adminItem({
+    email: req.body.email,
+    password: req.body.password,
+  });
+  req.login(adminData, function (err) {
+    if (err) {
+      return err;
+    } else {
+      passport.authenticate("local")(req, res, function () {
+        res.redirect("/admin-data");
+      });
+    }
+  });
+});
+
+app.post("/admin-delete-appointment", async (req, res) => {
+  await formAppointmentItems
+    .deleteOne({ mobile: req.body.mobile })
+    .then((data) => {
+      res.redirect("/admin-data#main-form");
+    })
+    .catch((err) => {
+      console.log(err.message);
+      res.send("Query Not Deleted");
+    });
+});
+
+app.post("/admin-delete-covid", async (req, res) => {
+  await formCovidItems
+    .deleteOne({ phone: req.body.phone })
+    .then((data) => {
+      console.log(data);
+      res.redirect("/admin-data#covid-form");
+    })
+    .catch((err) => {
+      console.log(err.message);
+      res.send("Query Not Deleted");
+    });
 });
 
 app.listen(process.env.PORT || 3000, () => {

@@ -6,3 +6,5 @@
 6)- Make slider stop when youtube video is playing.
 7)- How to make list in nurse to not go inide image flow.
 8)- Make card in about.ejs of same height always.
+9)- Why feature of card coming up work in local host but not in actual site. Like click on ailment
+10)- Why there is sudden glitch when we load website on main link

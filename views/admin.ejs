@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <title>Admin Access Page</title>
+  <link rel="shortcut icon" href="images/WE-Care_1.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link href="css/admin.css" rel="stylesheet" />
+</head>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <form method="post" action="/admin">
+      <img class="mb-4 logo" src="images/WE-Care_1.ico" alt="We Care Admin Page Image" width="82" height="87" />
+      <h1 class="h4 mb-3 fw-normal"><b>Admin Access :)</b></h1>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="name@example.com" name="email"
+          aria-describedby="emailHelp" required />
+        <label for="exampleInputEmail1">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password"
+          required />
+        <label for="floatingInput2">Password</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        Sign Me
+      </button>
+      <p class="mt-5 mb-3 text-muted">
+        &copy; Made by
+        <a href="https://www.linkedin.com/in/rajg1110" target="_blank">Raj Gupta</a>
+      </p>
+    </form>
+  </main>
+</body>
+
+</html>

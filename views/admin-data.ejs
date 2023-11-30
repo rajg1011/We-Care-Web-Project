@@ -1,0 +1,111 @@
+<%- include("header.ejs") -%>
+    <link rel="stylesheet" href="css/admin-data.css">
+    <div id="admin-page">
+        <h1>
+            We Care Admin Access Data
+        </h1>
+
+        <h2>Main Form</h2>
+        <div id="main-form">
+            <table id="main-form-tabel" class="admin-table">
+                <tr>
+                    <th>S. No.</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Mobile</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Email</th>
+                    <th>Delete Item</th>
+                </tr>
+
+                <% for(var i=0; i<generalFormArray.length;i++){ %>
+                    <tr>
+                        <td>
+                            <%=i+1%>
+                        </td>
+                        <td>
+                            <%=generalFormArray[i].name%>
+                        </td>
+                        <td>
+                            <%=generalFormArray[i].gender%>
+                        </td>
+                        <td>
+                            <%=generalFormArray[i].mobile%>
+                        </td>
+                        <td>
+                            <%=generalFormArray[i].state%>
+                        </td>
+                        <td>
+                            <%=generalFormArray[i].city%>
+                        </td>
+                        <td><a href="mailto:<%=generalFormArray[i].email%>">
+                                <%=generalFormArray[i].email%>
+                            </a></td>
+                        <td>
+                            <form method="POST" action="/admin-delete-appointment">
+                                <input type="text" value="<%=generalFormArray[i].mobile%>" name="mobile">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+
+
+            </table>
+        </div>
+
+
+
+
+
+        <h2>Covid Form</h2>
+        <div id="covid-form">
+
+            <table id="covid-form-table" class="admin-table">
+                <tr>
+                    <th>S. No.</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Delete Item</th>
+                </tr>
+                <% for(var i=0; i<covidFromArray.length;i++){ %>
+                    <tr>
+                        <td>
+                            <%=i+1%>
+                        </td>
+                        <td>
+                            <%=covidFromArray[i].name%>
+                        </td>
+                        <td>
+                            <%=covidFromArray[i].phone%>
+                        </td>
+                        <td>
+                            <%=covidFromArray[i].location%>
+                        </td>
+                        <td><a href="mailto:<%=covidFromArray[i].email%>">
+                                <%=covidFromArray[i].email%>
+                            </a></td>
+                        <td>
+                            <%=covidFromArray[i].message%>
+                        </td>
+                        <td>
+                            <form method="POST" action="/admin-delete-covid">
+                                <input type="text" value="<%=covidFromArray[i].phone%>" name="phone">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+
+
+    </div>
+
+
+
+    <%- include("apointment") -%> <%- include("footer") -%>
